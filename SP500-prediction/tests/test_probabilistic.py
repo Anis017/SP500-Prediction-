@@ -5,6 +5,8 @@ import sys
 import os
 
 # Ajouter le chemin src au PYTHONPATH
+# Utulisation des modéles probabilistes des ML 
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from probabilistic import ProbabilisticForecaster
