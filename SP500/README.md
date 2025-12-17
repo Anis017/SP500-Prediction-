@@ -1,7 +1,7 @@
-# 📊 **SP500Forecaster**
+# 📊 **SP500**
 ### **Predicting S&P 500 Stocks with ML**
 
-**SP500Forecaster is a machine learning-powered stock price prediction app specifically designed for S&P 500 companies. Built with Python and Streamlit, it leverages historical stock data to forecast future trends and empower investors with data-driven insights.**
+**SP500 is a machine learning-powered stock price prediction app specifically designed for S&P 500 companies. Built with Python and Streamlit, it leverages historical stock data to forecast future trends and empower investors with data-driven insights.**
 
 ---
 
@@ -100,61 +100,4 @@ streamlit run 00_ℹ️_Info.py
 
 The app will be live at ```http://localhost:8501```
 
----
-
-## 🎬 **Demo**
-  
-### Stock Predictor Page:
-![S&P500 Price Predictor](https://raw.githubusercontent.com/josericodata/SP500Forecaster/main/assets/gifs/sp500forecaster.gif)
-
----
-### ▶️ Watch the YouTube Tutorial
-
-
-[![Build a Stock Predictor App in 4 Minutes with Streamlit](https://img.youtube.com/vi/aRFjkMZeKhc/maxresdefault.jpg)](https://www.youtube.com/watch?v=aRFjkMZeKhc "Click to play")
-
-Click the image above or [here](https://www.youtube.com/watch?v=aRFjkMZeKhc) to watch the video on YouTube.
-
----
-
-## 🔮 **Future Enhancements**
-
-Planned improvements and new features include:
-
-- **Integration of advanced ML models** (e.g., LSTM, Prophet) for better prediction accuracy.
-- **Multi-stock analysis** to compare performance across different stocks.
-- **Sector-based insights** to understand trends within specific industries.
-- **User accounts and history tracking** for tailored predictions and personalized experiences.
-
----
-
-## 🔧 **Environment Setup**
-
-The SP500Forecaster app is built and tested using the following software environment:
-
-- **Operating System**: Ubuntu 22.04.5 LTS (Jammy)
-- **Python Version**: Python 3.10.12
-
-Ensure your environment matches or exceeds these versions for optimal performance.
-
----
-
-## 📋 **Important Notes**
-
-- **Data Requirements**: Stocks with less than two years of historical data will not be processed by the model.
-- **Using the Stock Predictor**:
-  1. Select a stock ticker from the dropdown menu.
-  2. Choose the desired prediction range using the slider.
-  3. Click the **Run Prediction** button to generate results.
-
----
-
-## 🤝 **Open Pull Requests**
-
-If you find any bug, feel free to contact me by opening a pull request on GitHub or via email at **maninastre@gmail.com**.
-
----
-
-## ⚠️ **Disclaimer**
-
-**This app is designed to demonstrate my skills in data modeling and analytics, showcasing how data-driven insights can assist in building my portfolio as a data analyst. It is not intended to provide financial advice or investment guidance. The predictions are for illustrative purposes only and should not be relied upon for making financial decisions.**
+--
