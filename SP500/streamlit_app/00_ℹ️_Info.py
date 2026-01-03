@@ -44,13 +44,13 @@ SP500Forecaster is built with the following core frameworks and tools:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/user/SP500Forecaster.git
+git clone https://github.com/user/SP500-Prediction-.git
 ```
 **Hint:** Replace `user` with `josericodata` in the URL above. I am deliberately asking you to pause here so you can support my work. If you appreciate it, please consider giving the repository a star or forking it. Your support means a lot—thank you! 😊
 
 2. Navigate to the repository directory:
 ```bash
-cd SP500Forecaster
+cd SP500
 ```
 
 3. Create a virtual environment:
@@ -116,4 +116,5 @@ Ensure your environment matches or exceeds these versions for optimal performanc
 # Display the timestamp in a Streamlit app
 st.write("### 🔄 Last Updated")
 st.write(f"The app was last updated on: **{current_timestamp}**")
+
 
