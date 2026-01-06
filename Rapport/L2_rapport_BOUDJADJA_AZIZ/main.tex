@@ -1,0 +1,211 @@
+\documentclass[a4paper, 12pt, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{lmodern}
+\usepackage{ae,aecompl}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm, headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{array}
+\usepackage{hyperref}
+\input{pagedegarde}  % Fichier obligatoire pour la page de garde personnalisée
+
+\title{Prédiction des prix des actions du S\&P 500 à l'aide de Machine Learning}
+\entreprise{}  % Pas d'entreprise (projet académique)
+\datedebut{10/2025}  % Ex. : 1 septembre 2025
+\datefin{12/2025}      % Ex. : 20 décembre 2025
+\membrea{BOUDJADJA Anis (45000199) -- \url{https://github.com/Anis017/SP500-Prediction-}}
+\membreb{Aziz Amor     (44020039)}
+
+% Commentez les lignes suivantes si seulement deux membres
+
+\begin{document}
+
+\pagedegarde
+
+\section*{Remerciements}
+Nous tenons à remercier notre encadrant pour ses conseils précieux, ainsi que les outils open-source qui ont facilité le développement de ce projet.
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Ce projet consiste en la réalisation d'une application web permettant de prédire les prix futurs des actions composant l'indice S\&P 500 à l'aide de techniques de Machine Learning, plus précisément un modèle de séries temporelles autorégressif (AutoReg).
+
+L'objectif principal est de fournir aux utilisateurs un outil intuitif pour visualiser les données historiques et obtenir des prévisions à court et moyen terme (5 à 180 jours), tout en soulignant les limites inhérentes à la prédiction boursière.
+
+Le projet s'inscrit dans le cadre d'un travail académique en informatique, en mettant l'accent sur l'utilisation de bibliothèques Python modernes pour le traitement de données financières.
+
+\section{Environnement de travail}
+Le développement a été réalisé en Python 3, avec un environnement virtuel pour gérer les dépendances. L'application est déployée localement via Streamlit, qui permet une interface web interactive sans serveur complexe.
+
+Les outils principaux utilisés :
+\begin{itemize}
+\item Éditeur : VS Code ou PyCharm.
+\item Gestion de versions : Git et GitHub (dépôt public : \url{https://github.com/Anis017/SP500-Prediction-})
+\item Exécution : Streamlit pour l'interface utilisateur.
+\end{itemize}
+
+\section{Description du projet et objectifs}
+\subsection{Problématique}
+La prédiction des prix des actions est un défi majeur en raison de la nature volatile et influencée par de nombreux facteurs externes des marchés financiers. L'indice S\&P 500 regroupe 500 grandes entreprises américaines, et ses composants sont souvent analysés pour des décisions d'investissement.
+
+\subsection{Objectifs}
+\begin{itemize}
+\item Récupérer des données historiques en temps réel via l'API Yahoo Finance.
+\item Appliquer un modèle AutoReg pour prévoir les prix futurs.
+\item Fournir une interface utilisateur conviviale avec graphiques interactifs et export CSV.
+\item Limiter les prévisions à des horizons raisonnables (jusqu'à 180 jours).
+\end{itemize}
+
+\section{Bibliothèques, Outils et technologies}
+Le projet repose sur les bibliothèques suivantes :
+\begin{itemize}
+\item \textbf{Streamlit} : Interface web interactive.
+\item \textbf{yfinance} : Récupération des données boursières.
+\item \textbf{statsmodels} : Implémentation du modèle AutoReg.
+\item \textbf{Plotly} : Graphiques interactifs.
+\item \textbf{Pandas} : Manipulation des données.
+\end{itemize}
+
+La structure du projet est la suivante :
+\begin{verbatim}
+SP500-PREDICTION-
+├── assets/
+│   └── data/
+│       └── sp500_tickers.csv
+├── streamlit_app/
+│   ├── modules/
+│   │   └── helper.py
+│   ├── pages/
+│   │   └── 01_��_StockPredictor.py
+│   └── 00_ℹ️_Info.py
+├── LICENSE
+├── README.md
+└── requirements.txt
+\end{verbatim}
+
+\section{Travail réalisé}
+Les fonctionnalités prévues et réalisées :
+\begin{itemize}
+\item Sélection d'un ticker parmi les entreprises du S\&P 500 : réalisée.
+\item Récupération des données historiques (2 ans) : réalisée.
+\item Entraînement du modèle AutoReg et prévision (5 à 180 jours) : réalisée.
+\item Affichage interactif avec Plotly (historique + prévision) : réalisée.
+\item Téléchargement des prévisions en CSV : réalisée.
+\item Interface multilingue/informations : réalisée via pages Streamlit.
+\end{itemize}
+
+Aucune fonctionnalité majeure n'a été abandonnée.
+
+\textbf{Répartition du travail :}
+\begin{itemize}
+\item Amor : Développement de l'interface Streamlit et intégration Plotly.
+\item Anis : Implémentation du modèle AutoReg, gestion des données yfinance et tests.
+\end{itemize}
+
+\section{Aide apportée par l'intelligence artificielle}
+L'intelligence artificielle (notamment Grok de xAI et/ou ChatGPT) a été utilisée à plusieurs étapes :
+\begin{itemize}
+\item Génération et optimisation de code (ex. : traitement des données, débogage yfinance).
+\item Aide conceptuelle pour le choix et le paramétrage du modèle AutoReg.
+\item Rédaction et structuration de parties du rapport.
+\item Suggestions pour l'amélioration de l'interface Streamlit.
+\end{itemize}
+Cela a accéléré le développement tout en approfondissant la compréhension des concepts.
+
+\section{Difficultés rencontrées}
+\begin{itemize}
+\item Volatilité des marchés rendant les prévisions imprécises à long terme.
+\item Choix optimal des lags dans le modèle AutoReg.
+\item Gestion des données manquantes (jours fériés).
+\item Performances variables selon la liquidité des tickers.
+\end{itemize}
+
+\section{Démonstration du projet}
+
+Cette section présente les captures d'écran de l'application en action, montrant les différentes fonctionnalités et l'interface utilisateur.
+
+\subsection{Page d'accueil}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{télécharger (1).png}
+\captionof{figure}{Page d'accueil de l'application avec les informations du projet}
+\end{center}
+
+\subsection{Sélection et visualisation des prédictions}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{télécharger (2).png}
+\captionof{figure}{Interface de sélection du ticker et graphique de prédiction}
+\end{center}
+
+\subsection{Export et résultats}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{télécharger.png}
+\captionof{figure}{Affichage des résultats et options d'export en CSV}
+\end{center}
+
+\section{Bilan}
+\subsection{Conclusion}
+Le projet a permis de développer une application fonctionnelle démontrant l'application du Machine Learning aux données financières. Tous les objectifs principaux ont été atteints.
+
+\subsection{Perspectives}
+\begin{itemize}
+\item Intégrer des modèles plus avancés (LSTM, Prophet).
+\item Ajouter des indicateurs techniques (RSI, MACD).
+\item Déploiement en ligne.
+\item Analyse de sentiment à partir de news.
+\end{itemize}
+
+\newpage
+\section{Bibliographie}
+\begin{thebibliography}{9}
+\bibitem{yfinance} Yahoo Finance API documentation, \url{https://pypi.org/project/yfinance/}
+\bibitem{statsmodels} Statsmodels documentation, AutoReg model, \url{https://www.statsmodels.org/stable/generated/statsmodels.tsa.ar_model.AutoReg.html}
+\bibitem{streamlit} Streamlit documentation, \url{https://docs.streamlit.io/}
+\end{thebibliography}
+
+\newpage
+\section{Webographie}
+\begin{thebibliography}{9}
+\bibitem{sp500} Liste des tickers S\&P 500, Wikipedia.
+\bibitem{plotly} Plotly Python, \url{https://plotly.com/python/}
+\end{thebibliography}
+
+\newpage
+\section{Annexes}
+\appendix
+\makeatletter
+\def\@seccntformat#1{Annexe~\csname the#1\endcsname:\quad}
+\makeatother
+
+\section{Cahier des charges}
+Description détaillée des fonctionnalités prévues (voir section ``Travail réalisé'').
+
+\section{Exemple d'exécution du projet}
+L'application est exécutée localement via la commande :
+\begin{verbatim}
+streamlit run streamlit_app/00_ℹ️_Info.py
+\end{verbatim}
+
+L'utilisateur peut alors :
+\begin{enumerate}
+\item Accéder à la page d'information.
+\item Sélectionner un ticker S\&P 500 dans la liste déroulante.
+\item Choisir l'horizon de prévision (5 à 180 jours).
+\item Visualiser le graphique interactif montrant les données historiques et les prévisions.
+\item Télécharger les résultats sous forme de fichier CSV.
+\end{enumerate}
+
+\section{Manuel utilisateur}
+\begin{enumerate}
+\item Cloner le dépôt GitHub.
+\item Créer et activer un environnement virtuel : \verb|python -m venv .venv|
+\item Installer les dépendances : \verb|pip install -r requirements.txt|
+\item Se placer dans le dossier \verb|streamlit_app|
+\item Lancer l'application : \verb|streamlit run 00_ℹ️_Info.py|
+\item L'application s'ouvre dans le navigateur à l'adresse \url{http://localhost:8501}
+\end{enumerate}
+
+\end{document}
