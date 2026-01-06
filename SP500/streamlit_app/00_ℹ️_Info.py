@@ -7,10 +7,10 @@ st.set_page_config(page_title="S&P 500 Stock Predictor App", page_icon="📊")
 current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 st.markdown(
-    """# 📊 **S&P500Forecaster**
+    """# 📊 **S&P500**
 ### **Predicting S&P 500 Stocks with ML**
 
-**SP500-Prediction  is a machine learning-powered stock price prediction app specifically designed for S&P 500 companies. Built with Python and Streamlit, it leverages historical stock data to forecast future trends and empower investors with data-driven insights.**
+**SP500 is a machine learning-powered stock price prediction app specifically designed for S&P 500 companies. Built with Python and Streamlit, it leverages historical stock data to forecast future trends and empower investors with data-driven insights.**
 
 ## 🛠️ **How It's Built**
 
@@ -38,6 +38,63 @@ SP500Forecaster is built with the following core frameworks and tools:
 - **Downloadable CSV** - Save prediction results for further analysis.
 - **User-friendly interface** - Accessible for novice and experienced users alike.
 
+## 🚀 **Getting Started**
+
+### **Local Installation**
+
+1. Clone the repository:
+```bash
+git clone https://github.com/user/SP500Forecaster.git
+```
+2. Navigate to the repository directory:
+```bash
+cd SP500
+```
+
+3. Create a virtual environment:
+```bash
+python3 -m venv venvStreamlit
+```
+
+4. Activate the virtual environment:
+```bash
+source venvStreamlit/bin/activate
+```
+
+5. Install requirements:
+```bash
+pip install -r requirements.txt
+```
+
+6. Navigate to the app directory:
+```bash
+cd streamlit_app
+```
+
+7. Run the app:
+```bash
+streamlit run 00_ℹ️_Info.py
+```
+
+The app will be live at ```http://localhost:8501```
+
+## 🔮 **Future Enhancements**
+
+Planned improvements and new features include:
+
+- **Integration of advanced ML models** (e.g., LSTM, Prophet) for better prediction accuracy.
+- **Multi-stock analysis** to compare performance across different stocks.
+- **Sector-based insights** to understand trends within specific industries.
+- **User accounts and history tracking** for tailored predictions and personalized experiences.
+
+## 🔧 **Environment Setup**
+
+The SP500Forecaster app is built and tested using the following software environment:
+- **Python Version**: Python 3.10.12
+
+Ensure your environment matches or exceeds these versions for optimal performance.
+
+
 ## 📋 **Important Notes**
 
 - **Data Requirements**: Stocks with less than two years of historical data will not be processed by the model.
@@ -45,11 +102,10 @@ SP500Forecaster is built with the following core frameworks and tools:
   1. Select a stock ticker from the dropdown menu.
   2. Choose the desired prediction range using the slider.
   3. Click the **Run Prediction** button to generate results.
+  
+"""
 )
 
 # Display the timestamp in a Streamlit app
 st.write("### 🔄 Last Updated")
 st.write(f"The app was last updated on: **{current_timestamp}**")
-
-
-
